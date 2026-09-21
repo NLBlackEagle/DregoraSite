@@ -1,0 +1,10 @@
+@layer base, theme, components, utilities;
+
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: forest --default;
+}
+
+.hero-image {
+  color: #f0eee2;
+}

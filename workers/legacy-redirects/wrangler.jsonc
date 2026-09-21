@@ -1,0 +1,17 @@
+{
+  "$schema": "../../node_modules/wrangler/config-schema.json",
+  "name": "dregora-legacy-redirects",
+  "main": "index.js",
+  "compatibility_date": "2026-09-21",
+  "workers_dev": false,
+  "routes": [
+    {
+      "pattern": "map.dregora.com/*",
+      "zone_name": "dregora.com"
+    },
+    {
+      "pattern": "old.dregora.com/*",
+      "zone_name": "dregora.com"
+    }
+  ]
+}

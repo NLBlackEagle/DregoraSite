@@ -1,0 +1,24 @@
+{
+  "name": "dregora-site",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "deploy:redirects": "wrangler deploy --config workers/legacy-redirects/wrangler.jsonc"
+  },
+  "dependencies": {
+    "@phosphor-icons/web": "latest",
+    "@tailwindcss/vite": "latest",
+    "astro": "latest",
+    "daisyui": "^5.7.42",
+    "tailwindcss": "^4.3.3"
+  },
+  "devDependencies": {
+    "astro-og": "^0.3.2",
+    "wrangler": "^4.136.1"
+  }
+}

@@ -1,0 +1,266 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Icon from "../components/Icon.astro";
+import { Image } from "astro:assets";
+import logo from "../assets/dregora-logo.png";
+
+const discord = "https://discord.com/invite/uuFAjS8";
+const downloads = [
+  {
+    name: "Dregora Remastered",
+    href: "https://www.curseforge.com/minecraft/mc-mods/dregora",
+  },
+  {
+    name: "Dregora O Plenty",
+    href: "https://www.curseforge.com/minecraft/mc-mods/dregora-o-plenty",
+  },
+  {
+    name: "RLCraft Dregora Modpack",
+    href: "https://www.curseforge.com/minecraft/modpacks/rlcraft-dregora",
+  },
+];
+const relatedMods = [
+  {
+    name: "Chunk Comfort",
+    href: "https://www.curseforge.com/minecraft/mc-mods/chunkcomfort",
+  },
+  {
+    name: "Dynamic Trees: Pale Bloom",
+    href: "https://www.curseforge.com/minecraft/mc-mods/dynamic-trees-pale-bloom",
+  },
+  {
+    name: "EagleMixins",
+    href: "https://www.curseforge.com/minecraft/mc-mods/eaglemixins",
+  },
+  {
+    name: "Rustic Pipes",
+    href: "https://www.curseforge.com/minecraft/mc-mods/rustic-pipes",
+  },
+  {
+    name: "The Underneath",
+    href: "https://www.curseforge.com/minecraft/mc-mods/underneath",
+  },
+];
+const faqs = [
+  {
+    question: "What is Dregora?",
+    answer:
+      "Dregora is a world-generation project for Minecraft, built with Open Terrain Generator (OTG). It combines procedurally generated terrain with designed regions, biomes, and structures.",
+  },
+  {
+    question: "Which download should I choose?",
+    answer:
+      "Choose Dregora Remastered for the default standalone preset, or Dregora O Plenty for the preset made for Biomes O’ Plenty. Choose RLCraft Dregora if you want the complete modpack.",
+  },
+  {
+    question: "Are the standalone presets complete modpacks?",
+    answer:
+      "No. The standalone downloads are world-generation presets for OTG. Follow the requirements and installation instructions on each CurseForge project page, including the required Minecraft version and dependencies.",
+  },
+  {
+    question: "Is Dregora RL the same as RLCraft Dregora?",
+    answer:
+      "Dregora RL is the world-generation component used in RLCraft Dregora. RLCraft Dregora is the full modpack, including that world generation and the rest of the pack’s mods.",
+  },
+  {
+    question: "When will the new website be ready?",
+    answer:
+      "We don’t have a launch date to share yet. The official download links above are available while we rebuild the website.",
+  },
+];
+---
+
+<Layout>
+  <a
+    href="#main"
+    class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 btn"
+    >Skip to content</a
+  >
+  <div
+    class="hero-image relative isolate flex min-h-svh flex-col overflow-hidden"
+  >
+    <img
+      src="/images/dregora-world.jpg"
+      alt=""
+      width="1910"
+      height="1011"
+      fetchpriority="high"
+      class="absolute inset-0 -z-20 h-full w-full object-cover object-[65%_center]"
+    />
+    <div
+      class="absolute inset-0 -z-10 bg-base-100/35 md:bg-transparent"
+      aria-hidden="true"
+    >
+    </div>
+    <div
+      class="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(10,18,15,0.95),rgba(10,18,15,0.78)_40%,rgba(10,18,15,0.15)),linear-gradient(0deg,rgba(10,18,15,0.95),transparent_40%)]"
+      aria-hidden="true"
+    >
+    </div>
+
+    <main
+      id="main"
+      class="mx-auto flex w-full max-w-5xl flex-1 flex-col px-6 pt-12 before:flex-1 before:content-[''] sm:px-14 sm:pt-20 lg:px-20"
+    >
+      <section
+        class="relative max-w-170 text-center md:text-left"
+        aria-labelledby="coming-soon"
+      >
+        <a
+          href="/"
+          aria-label="Dregora home"
+          class="mx-auto mb-6 block w-36 md:absolute md:top-0 md:right-full md:mr-8 md:mb-0 md:w-40"
+        >
+          <Image
+            src={logo}
+            alt="Lands of Dregora"
+            width={160}
+            layout="fixed"
+            class="w-full"
+          />
+        </a>
+        <div class="max-w-170">
+          <h1
+            id="coming-soon"
+            class="text-3xl leading-tight font-bold sm:text-5xl"
+          >
+            New Website Coming Soon!
+          </h1>
+          <p class="mx-auto mt-6 max-w-lg leading-7 md:mx-0">
+            We're working hard on putting together a brand new site. This will
+            include a more streamlined experience for those looking for updates,
+            downloads, and info on all of our projects.
+          </p>
+          <p class="mx-auto mt-4 max-w-md leading-7 md:mx-0">
+            You can still download Dregora below and find us on <a
+              class="link underline-offset-4"
+              href={discord}>Discord</a
+            >. Thanks for sticking with us in the meantime.
+          </p>
+        </div>
+      </section>
+
+      <nav
+        aria-label="Downloads and resources"
+        class="flex w-full max-w-230 flex-1 flex-col justify-center py-9 sm:py-11"
+      >
+        <div class="grid lg:grid-cols-[1fr_2fr] lg:gap-8">
+          <div>
+            <h2 class="mb-3 text-center font-semibold sm:text-left">Dregora</h2>
+            <ul class="space-y-3">
+              {
+                downloads.map((download) => (
+                  <li>
+                    <a
+                      href={download.href}
+                      class="btn btn-primary h-auto min-h-12 w-full justify-center gap-3 px-4 py-3 text-center sm:justify-start sm:text-left"
+                    >
+                      <Icon name="curseforge" />
+                      {download.name}
+                    </a>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+          <div class="divider my-4 lg:hidden" aria-hidden="true"></div>
+          <div class="lg:border-base-content/20 lg:border-l lg:pl-8">
+            <h2 class="mb-3 text-center font-semibold sm:text-left">
+              Related Standalone Mods
+            </h2>
+            <ul class="grid gap-3 lg:grid-cols-2">
+              {
+                relatedMods.map((mod) => (
+                  <li>
+                    <a
+                      href={mod.href}
+                      class="btn btn-primary h-auto min-h-12 w-full justify-center gap-3 px-4 py-3 text-center sm:justify-start sm:text-left"
+                    >
+                      <Icon name="curseforge" />
+                      {mod.name}
+                    </a>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        </div>
+        <div class="mt-6 grid grid-cols-3 gap-2">
+          <a
+            class="btn btn-secondary min-h-11 w-full px-3"
+            href="https://discord.gg/FKQFmYntQR">Feedback (Discord)</a
+          >
+          <a
+            class="btn btn-secondary min-h-11 w-full px-3"
+            href="https://www.youtube.com/watch?v=HPjCgXD6THc&list=PLzsBT7u7aCw94I3PDz4bPkaXD0y-2MW7F"
+            >Guides (YouTube)</a
+          >
+          <a
+            class="btn btn-secondary min-h-11 w-full px-3"
+            href="https://github.com/RLSquad/RLCraft-Dregora-Edition-Public/issues"
+            >Issues (Github)</a
+          >
+        </div>
+      </nav>
+    </main>
+  </div>
+
+  <section
+    id="faq"
+    aria-labelledby="faq-title"
+    class="mx-auto max-w-5xl scroll-mt-6 px-6 py-12 sm:px-14 sm:py-16 lg:px-20"
+  >
+    <div class="space-y-6">
+      <div>
+        <h2 id="faq-title" class="text-2xl font-bold sm:text-3xl">
+          Frequently asked questions
+        </h2>
+        <p class="mt-3 text-sm leading-6">
+          Need a hand? Ask in <a href={discord} class="link underline-offset-4"
+            >Discord</a
+          > or <a href="mailto:mail@dregora.com" class="link underline-offset-4"
+            >email us</a
+          >.
+        </p>
+      </div>
+      <div class="space-y-3">
+        {
+          faqs.map((faq) => (
+            <details class="collapse collapse-plus bg-base-200 shadow-sm">
+              <summary class="collapse-title bg-secondary py-5 text-base font-semibold text-secondary-content focus-visible:outline-2 focus-visible:-outline-offset-4">
+                {faq.question}
+              </summary>
+              <div class="collapse-content text-sm leading-7">
+                <p class="max-w-2xl pt-4">{faq.answer}</p>
+              </div>
+            </details>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <footer
+    class="mx-auto flex max-w-5xl flex-col-reverse items-start justify-between gap-4 px-6 py-6 text-xs sm:flex-row sm:items-center sm:px-14 lg:px-20"
+  >
+    <p class="shrink-0">© {new Date().getFullYear()} Dregora</p>
+    <nav aria-label="Footer" class="flex flex-wrap gap-3">
+      <a class="btn btn-accent min-h-11 gap-2" href={discord}
+        ><Icon name="discord" />Discord</a
+      >
+      <a
+        class="btn btn-accent min-h-11 gap-2"
+        href="https://github.com/NLBlackEagle/Dregora"
+        ><Icon name="github" class="size-4" />GitHub</a
+      >
+      <a class="btn btn-accent min-h-11 gap-2" href="mailto:mail@dregora.com"
+        ><Icon name="envelope" class="size-5" />Email</a
+      >
+      <a
+        class="btn btn-accent min-h-11 gap-2"
+        href="https://web.archive.org/web/20260416051744/http://www.dregora.com/"
+        ><Icon name="archive" class="size-5" />Archived website</a
+      >
+    </nav>
+  </footer>
+</Layout>
