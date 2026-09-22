@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Icon from "../components/Icon.astro";
 import { Image } from "astro:assets";
 import logo from "../assets/dregora-logo.png";
+import heroIndex from "../assets/dregora-world.jpg";
 
 const discord = "https://discord.com/invite/uuFAjS8";
 const downloads = [
@@ -79,12 +80,13 @@ const faqs = [
   <div
     class="hero-image relative isolate flex min-h-svh flex-col overflow-hidden"
   >
-    <img
-      src="/images/dregora-world.jpg"
+    <Image
+      src={heroIndex}
       alt=""
-      width="1910"
-      height="1011"
-      fetchpriority="high"
+      layout="full-width"
+      quality={60}
+      format="webp"
+      priority
       class="absolute inset-0 -z-20 h-full w-full object-cover object-[65%_center]"
     />
     <div
@@ -113,8 +115,9 @@ const faqs = [
         >
           <Image
             src={logo}
-            alt="Lands of Dregora"
+            alt=""
             width={160}
+            priority
             layout="fixed"
             class="w-full"
           />
